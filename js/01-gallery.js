@@ -1,7 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-
 const gallery = document.querySelector('.gallery')
 
 
@@ -13,26 +12,17 @@ function makeGallery() {
     
     gallery.innerHTML = galleryEl;
 }
-
 makeGallery()
 
-gallery.addEventListener('click', onModalClick)
 
-function onModalClick(evt) {
-    evt.preventDefault()
+let lightbox = new SimpleLightbox('.gallery a', {
+    caption: 'true',
+    captionData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: '250'
+});
 
-    
-}
 
 
+// ------------------------------------------------------------------------------------------------
 
-// const instance = basicLightbox.create(`
-//     <div class="modal">
-//         <p>
-//             Your first lightbox with just a few lines of code.
-//             Yes, it's really that simple.
-//         </p>
-//     </div>
-// `)
-
-// instance.show()
